@@ -1,0 +1,58 @@
+Notes.txt
+
+Arithmetic Logic Unit does Addition, subtraction, multiplication, division, OR, AND
+
+
+Multiplexer uses a signal to select an input as the output
+    It takes in inputs, has a select signal, and the select signal tells the MUX which output to pass through
+    The inputs can be infinite bits
+
+INTERVIEW_QUESTION:
+    Can you make a 8-1 MUX out of 2-1 MUXs, how many do you need?
+        You just layer them in a pyramid-shape, go 4-2-1, you need 7MUXs
+
+
+MUXes can be defined in Verilog via 
+    1.if / else blocks  
+    2. case statements (This is like a switch statement)
+
+always@(*) is a shortcut for more complex code in Verilog
+    the * tells verilog to synthesize the contents to combinational Logic
+
+In a combinational always@(*) block, the outputs are constantly updated
+    CANNOT ASSIGN WIRES WITHIN always@(*)
+
+
+reg keyword
+    this is short for register
+    reg is a data type used for combinational or sequential Logic
+    it can connect ports, like WIRES
+    this is the version of a wire used in an always@(*) block
+    wires must always be driven by an output, but a reg can hold a value itself
+        (if you disconnect a wire, it has no value)
+        reg doesn't NEED an input
+    functionally, very similar to wires
+
+
+Wires need assign statements, canot be in always blocks
+reg cannot use assign statements, must be in always blocks
+
+
+
+ASICS
+    Application specific integrated circuit
+
+ASIC vs Processor
+    A processor is a device that executes a certain number of predefined instructions
+    ASICS are a customizes silicon-architecture digital circuit
+        After designing a digital circuit in an HDL, we can send the design to the foundry to fabricate it
+
+
+FPGA architecture  
+    Look-Up-Table, Register and Multiplexer
+    a LUT is able to simulate simple boolean gates
+
+In testbenches, you create a clock using #delays and clock = (tilde) clock
+
+Quartus needs top-level assigned
+
